@@ -13,5 +13,4 @@ public class MeasureWordLength {
 		br.close();
 		System.out.println(str.length());
 	}
-
 }
