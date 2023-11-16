@@ -20,5 +20,4 @@ public class Palindrome {
 			System.out.println("0");
 		}
 	}
-
 }
