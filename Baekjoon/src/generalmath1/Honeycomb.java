@@ -22,7 +22,5 @@ public class Honeycomb {
 			}
 			System.out.println(count);
 		}
-		
 	}
-
 }
