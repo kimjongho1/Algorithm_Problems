@@ -25,7 +25,9 @@ public class FindTheFountain {
 			if(count % 2 != 0) {
 				System.out.println(count + "/" + (x - value));
 			} else {
-//				System.out.println(connt + "/" + ());
+				int numerator = 1;
+				int denominator = count;
+				System.out.println(numerator + "/" + denominator);
 			}
 		}
 	}
