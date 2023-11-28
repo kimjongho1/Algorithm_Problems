@@ -8,22 +8,34 @@ import java.util.StringTokenizer;
 public class MultiplesAndDivisors {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
+		String f = "factor\n";
+		String m = "multiple\n";
+		String n = "neither\n";
+        
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		StringTokenizer st;
+ 
 		while(true) {
-			StringTokenizer str = new StringTokenizer(br.readLine(), " ");
-			int a = Integer.parseInt(str.nextToken());
-			int b = Integer.parseInt(str.nextToken());
-			if(!(a == 0 && b == 0)) {
-				if(a % b == 0 && b % a == 0) {
-					System.out.println("multiple");
-				} else if (a % b == 0 || b % a == 0) {
-					System.out.println("factor");
-				} else {
-					System.out.println("neither");
-				}
-			} else {
-				break;
+			
+			st = new StringTokenizer(br.readLine()," ");
+			
+			int first = Integer.parseInt(st.nextToken());
+			int second = Integer.parseInt(st.nextToken());
+			
+			if(first == 0 && second == 0) break;
+			
+			if(second % first == 0) {
+				sb.append(f);
 			}
+			else if(first % second == 0) {
+				sb.append(m);
+			}
+			else {
+				sb.append(n);
+			}
+			
 		}
+		System.out.println(sb);
 	}
 }
