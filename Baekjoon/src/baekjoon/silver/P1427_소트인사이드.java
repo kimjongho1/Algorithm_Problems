@@ -4,15 +4,21 @@ import java.util.Scanner;
 
 public class P1427_소트인사이드 {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		String N = sc.nextLine();
-		// int n = Integer.parseInt(N);
-		int arr[] = new int[N.length()];
-		
-		for(int i = 0; i < N.length() - 1; i++) {
-			arr[i] = Integer.parseInt(N.charAt(i));
-			System.out.println(arr[i]);
+		Scanner in = new Scanner(System.in);
+		 
+		int[] counting = new int[10];
+ 
+		int N = in.nextInt();
+ 
+		while (N != 0) {
+			counting[N % 10]++;
+			N /= 10;
 		}
-		
+ 
+		for (int i = 9; i >= 0; i--) {
+			while (counting[i]-- > 0) {
+				System.out.print(i);
+			}
+		}
 	}
 }
