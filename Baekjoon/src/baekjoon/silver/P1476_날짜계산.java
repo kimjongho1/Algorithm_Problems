@@ -28,5 +28,4 @@ public class P1476_날짜계산 {
 		}
 		System.out.println(result);
 	}
-
 }
