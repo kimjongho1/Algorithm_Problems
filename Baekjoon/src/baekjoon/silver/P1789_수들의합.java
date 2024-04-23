@@ -9,13 +9,14 @@ public class P1789_수들의합 {
 		
 		long S = sc.nextLong();	// 1 <= S <= 4,294,967,295
 		int count = 0;
-		int sum = 0;
+		long sum = 0;
 		
-		while(S/2 > sum) {
-			sum += count + 1;
-			count++;
+		for(int i=1; ; i++) {
+			if(sum > S) break;
+			sum += i;
+			count ++;
 		}
 		
-		System.out.println(count * 2);
+		System.out.println(count);
 	}
 }
