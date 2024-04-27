@@ -11,7 +11,9 @@ public class P15312_이름궁합 {
 		
 		String A = sc.nextLine();
 		String B = sc.nextLine();
+		
 		int N = 0;
+		int stemp = 0;
 		
 		for(int i = 0; i < A.length(); i++) {
 			N = A.charAt(i) - 65;
@@ -19,7 +21,14 @@ public class P15312_이름궁합 {
 			N = B.charAt(i) - 65;
 			result[i * 2 + 1] = arr[N];
 		}
+		for(int i = 0; i < A.length() * 2 - 2; i++) {
+			for(int j = 0; j < A.length() * 2 - 1; j++) {
+				stemp = result[j + 1];
+				result[j] = (result[j] + result[j + 1]) % 10;
+			}
+		}
 		
+		System.out.println(result[0] + "" + result[1]);
 	}
 
 }
