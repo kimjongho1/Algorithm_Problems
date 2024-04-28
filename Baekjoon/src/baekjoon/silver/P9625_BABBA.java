@@ -1,3 +1,4 @@
+package baekjoon.silver;
 import java.util.Scanner;
 
 public class P9625_BABBA {
