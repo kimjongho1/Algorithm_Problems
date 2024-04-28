@@ -16,8 +16,8 @@ public class P1065_한수 {
 		if(!(n < 100) && n != 1000) {
 			result = 99;
 			for(int i = 100; i <= n; i++) {
+				stemp = Integer.toString(i);
 				for(int j = 0; j < sN.length(); j++) {
-					stemp = Integer.toString(i);
 					arr[j] = stemp.charAt(j) - '0';
 				}
 				if(arr[0] - arr[1] == arr[1] - arr[2]) {
