@@ -8,17 +8,22 @@ public class P14729_칠무해 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-		int N = Integer.parseInt(br.readLine());
-		
-		StringBuilder sb = new StringBuilder();
-		
-		for(int i = 0; i < N; i++) {
-			sb.append(br.readLine()).append(",");
-		}
-		sb.deleteCharAt(sb.lastIndexOf(","));
-		
-		System.out.println(sb.toString());
-	}
+		int n = Integer.parseInt(br.readLine());
 
+		// 0.001 ~ 100.000
+		// 1~ 100000
+		int[] answer = new int[100001];
+		int cnt = 0;
+		for (int i = 0; i < n; i++) {
+			answer[(int) (Double.parseDouble(br.readLine()) * 1000)]++;
+		}
+
+		for (int i = 0; i < answer.length; i++) {
+			while (answer[i] > 0 && cnt < 7) {
+				System.out.printf("%.3f\n", i / 1000.0);
+				answer[i]--;
+				cnt++;
+			}
+		}
+	}
 }
