@@ -1,6 +1,5 @@
 package baekjoon.bronz;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class P1157_단어공부 {
