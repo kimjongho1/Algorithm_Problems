@@ -1,20 +1,28 @@
 package baekjoon.silver;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class P1748_수이어쓰기1 {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		
-		int n = sc.nextInt();
-		
-		int result = 0;
-		
-		for(int i = 1; i < n + 1; i++) {
-			result += String.valueOf(i).length();
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		int count = 0;	// 자릿수
+		int plus = 1;	// 자릿수에 더하는 값
+		int num = 10;	// 몇 자릿수 더할지 판단
+		int N = Integer.parseInt(bf.readLine());
+		for(int i=1; i<=N; i++) {
+			// 자릿수 바뀌는 조건 => 10, 100, 1000, 10000, ...
+			if(i%num == 0) {
+				plus ++;
+				num *= 10;
+			}
+			count += plus;
+
 		}
-		System.out.println(result);
+		System.out.println(count);
+		bf.close();
 	}
 
 }
